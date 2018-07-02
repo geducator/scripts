@@ -1,0 +1,27 @@
+#!/bin/bash
+
+newComponent="$1.js"
+# need to check if file exists
+if [ ! -f $newComponent ];
+then
+  touch $newComponent
+cat << EOF > "./$1.js"
+import React, { Component } from 'react'
+import styles from './styles.css?module'
+import {injectIntl} from 'react-intl'
+
+class $1 extends Component {
+  constructor(props){
+    super(props)
+
+  }
+
+}
+
+export default injectIntl($1)
+
+EOF
+  echo "Made new bash script $newComponent"
+else
+  echo "A file with that name already exists"
+fi
