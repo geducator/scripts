@@ -1,0 +1,13 @@
+#!/bin/bash
+
+newScript="$1"
+# need to check if file exists
+if [ ! -f $newScript ];
+then
+  touch "$1"
+  chmod 775 $newScript
+  echo "#1/bin/bash" >> $newScript
+  echo "Made new bash script $newScript"
+else
+  echo "A file with that name already exists"
+fi
