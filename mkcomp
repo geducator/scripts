@@ -21,7 +21,7 @@ class $1 extends Component {
 export default injectIntl($1)
 
 EOF
-  echo "Made new bash script $newComponent"
+  echo "Made new react component $newComponent"
 else
   echo "A file with that name already exists"
 fi
